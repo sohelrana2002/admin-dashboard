@@ -31,9 +31,25 @@ const FeaturedChart = () => {
         <div className="summary">
             <div className="item">
                 <div className="item__title">Target</div>
-                <div className="item__result">
-                    <KeyboardArrowUpOutlinedIcon fontSize="small" />
+                <div className="item__result negative">
+                    <KeyboardArrowDownOutlinedIcon fontSize="small" />
                     <div className="result__amount">$12.4k</div>
+                </div>
+            </div>
+
+            <div className="item">
+                <div className="item__title">Last Week</div>
+                <div className="item__result positive">
+                    <KeyboardArrowUpOutlinedIcon fontSize="small" />
+                    <div className="result__amount">$4.4k</div>
+                </div>
+            </div>
+
+            <div className="item">
+                <div className="item__title">Last Month</div>
+                <div className="item__result positive">
+                    <KeyboardArrowUpOutlinedIcon fontSize="small" />
+                    <div className="result__amount">$11.4k</div>
                 </div>
             </div>
         </div>

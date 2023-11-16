@@ -1,28 +1,43 @@
-.home{
+.home {
     display: flex;
 
-    .home__container{
+    .home__container {
         flex: 6.5;
         margin: 0 auto;
 
 
-        .home__interface{
+        .home__interface {
             display: flex;
             flex-direction: column;
             gap: 3rem;
         }
 
 
-        .widgets{
+        .widgets {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
         }
 
-        .charts{
+        .charts {
             display: grid;
             grid-template-columns: 3fr 5fr;
             gap: 2rem;
+        }
+
+        .list__container {
+            padding: 1.5rem;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            border-radius: 5px;
+            color: gray;
+
+            .list__Title{
+                font-weight: 500;
+                margin-bottom: 1.6rem;
+                font-size: 1.5rem;
+                color: gray;
+            }
         }
     }
 }
