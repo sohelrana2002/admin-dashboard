@@ -1,0 +1,50 @@
+.feature__chart{
+    padding: 1.5rem;
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    border-radius: 5px;
+
+
+    .top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: gray;
+
+        .title{
+            font-size: 1.6rem;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+    }
+
+
+    .bottom{
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+
+        .feature__chart-chart{
+            width: 130px;
+            height: 130px;
+        }
+
+        .title{
+            font-weight: 500;
+            color: gray;
+        }
+        .amount{
+            font-size: 3rem;
+            font-weight: 600;
+        }
+        .des{
+            font-size: 1.2rem;
+            color: gray;
+            text-align: center;
+            line-height: 1.3;
+        }
+    }
+}

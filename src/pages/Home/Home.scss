@@ -1,0 +1,28 @@
+.home{
+    display: flex;
+
+    .home__container{
+        flex: 6.5;
+        margin: 0 auto;
+
+
+        .home__interface{
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+
+        .widgets{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .charts{
+            display: grid;
+            grid-template-columns: 3fr 5fr;
+            gap: 2rem;
+        }
+    }
+}
