@@ -1,0 +1,43 @@
+.tableList{
+
+
+    .cellWrapper{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .images{
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .tableCell{
+        font-size: 1.5rem;
+        color: rgb(65, 65, 65);
+    }
+    .tableHead{
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: rgb(51, 51, 51);
+    }
+
+
+    .status{
+        padding: 5px;
+        border-radius: 2px;
+
+        &.Approved{
+            color: green;
+            background: rgba(0, 128, 0, 0.166);
+        }
+
+        &.Pending{
+            color: red;
+            background: rgba(255, 0, 0, 0.189);
+        }
+    }
+}
