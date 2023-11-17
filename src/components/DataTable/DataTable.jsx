@@ -28,10 +28,10 @@ const DataTable = () => {
         columns={userColumns.concat(actionColumn)}
         initialState={{
           pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
+            paginationModel: { page: 0, pageSize: 7 },
           },
         }}
-        pageSizeOptions={[5, 10]}
+        pageSizeOptions={[7, 10]}
         checkboxSelection
         className="dataGrid"
       />

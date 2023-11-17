@@ -1,0 +1,96 @@
+.single {
+    width: 100%;
+    display: flex;
+
+    .single__container {
+        flex: 6.3;
+
+        .title{
+            color: gainsboro;
+            margin-bottom: 2rem;
+        }
+
+
+        .top {
+            display: flex;
+            padding: 2rem;
+            gap: 2rem;
+
+
+            .left {
+                flex: 1;
+                padding: 1.5rem;
+                -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+                box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+                border-radius: 5px;
+                color: gray;
+                position: relative;
+
+                .edit__button{
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    padding: 5px;
+                    font-size: 1.2rem;
+                    color: #7451f8;
+                    background: #7551f811;
+                    border-radius: 2px;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+
+
+                .item{
+                    display: flex;
+                    gap: 2rem;
+
+                    .item__img{
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    .details{
+
+                        .item__title{
+                            margin-bottom: 1rem;
+                            color: #555;
+                        }
+
+                        .detail__item{
+                            margin-bottom: .7rem;
+                            font-size: 1.4rem;
+                            display: flex;
+                            gap: 1rem;
+
+                            .item__key{
+                                font-weight: 600;
+                                color: gray;
+                            }
+
+                            .item__value{
+                                font-weight: 300;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right {
+                flex: 2;
+            }
+        }
+
+        .bottom{
+            padding: 2rem;
+            margin: 1rem 2rem;
+                -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+                box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+                border-radius: 5px;
+                color: gray;
+                position: relative;
+        }
+    }
+}

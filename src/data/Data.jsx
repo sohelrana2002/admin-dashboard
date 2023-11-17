@@ -25,14 +25,16 @@ export const Links = [
         id: 1,
         icon: <DashboardIcon />,
         title: "dashboard",
-        type: "main"
+        type: "main",
+        path: "/"
     },
 
     {
         id: 2,
         icon: <PersonIcon />,
         title: "users",
-        type: "lists"
+        type: "lists",
+        path: "/users"
     },
 
     {

@@ -19,7 +19,7 @@ const SideBar = () => {
             if (curElem.type === "main") {
               return (
                 <div className="middle__content" key={curElem.id}>
-                  <NavLink>
+                  <NavLink to={curElem.path}>
                     <span>{curElem.icon}</span>
                     <p>{curElem.title}</p>
                   </NavLink>
@@ -33,7 +33,7 @@ const SideBar = () => {
             if (curElem.type === "lists") {
               return (
                 <div className="middle__content" key={curElem.id}>
-                  <NavLink>
+                  <NavLink to={curElem.path}>
                     <span>{curElem.icon}</span>
                     <p>{curElem.title}</p>
                   </NavLink>
