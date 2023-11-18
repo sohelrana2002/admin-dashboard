@@ -1,0 +1,133 @@
+.new {
+    width: 100%;
+    display: flex;
+
+    .new__container {
+        flex: 6.3;
+
+        .top,
+        .bottom {
+            margin: 2rem;
+            padding: 1.5rem;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            border-radius: 5px;
+            color: gray;
+            display: flex;
+
+            .title{
+                color: lightgrey;
+                font-size: 2rem;
+            }
+
+            .left{
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+               .img{
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                overflow: hidden;
+                border: 1px solid rgba(128, 128, 128, 0.168);
+                display: grid;
+                place-items: center;
+
+                img{
+                    width: 70px;
+                    height: 70px;
+                    padding: 1rem;
+                    object-fit: cover;
+                }
+               }
+            }
+            .right{
+                flex: 2;
+
+                form{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 2rem;
+                    column-gap: 4rem;
+                    padding: 2.5rem;
+                    border: 1px solid rgba(128, 128, 128, 0.173);
+                    border-radius: 5px;
+
+                    .file__input{
+                        width: 45%;
+                        display: flex;
+                        gap: 5px;
+                        align-items: center;
+                        border-bottom: 1px solid rgba(128, 128, 128, 0.173);
+
+                        label{
+                            margin-bottom: 3px;
+                            display: flex;
+                            align-items: center;
+                            font-size: 1.3rem;
+                            color: gray;
+                            font-weight: 500;
+                            cursor: pointer;
+
+                            svg{
+                                font-size: 2.5rem;
+                            }
+                        }
+
+                        input{
+                            width: 100%;
+                            padding: 5px;
+                            outline: none;
+                            border: none;
+
+                            &::placeholder{
+                                color: rgba(136, 136, 136, 0.543);
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+
+                    .form__input{
+                        width: 45%;
+
+                        label{
+                            margin-bottom: 3px;
+                            display: flex;
+                            align-items: center;
+                            font-size: 1.3rem;
+                            color: gray;
+                            font-weight: 500;
+                        }
+
+                        input{
+                            width: 100%;
+                            padding: 5px;
+                            outline: none;
+                            border: none;
+                            border-bottom: 1px solid rgba(128, 128, 128, 0.173);
+
+                            &::placeholder{
+                                color: rgba(136, 136, 136, 0.543);
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+
+                    .btn{
+                        width: max-content;
+                        padding: 1.5rem 5rem;
+                        border-radius: 3px;
+                        height: max-content;
+                        background: #7551f8d3;
+                        color: #fff;
+                        font-size: 1.4rem;
+                        font-weight: 500;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

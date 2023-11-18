@@ -1,5 +1,5 @@
 import SideBar from "../../shared/SideBar/SideBar";
-import Navbar from "../../shared/Navbar/Navbar";
+import Navbar from "../../shared/NavBar/NavBar";
 import Widget from "../../components/Widget/Widget";
 import FeaturedChart from "../../components/FeaturedChart/FeaturedChart";
 import Chart from "../../components/Chart/Chart";
