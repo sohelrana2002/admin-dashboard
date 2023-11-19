@@ -6,10 +6,15 @@ import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNone
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
 import Profile from '../../assets/sohel-profile.png'
+import { useDarkModeContext } from '../../context/DarkModeContext';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
 
 import './Navbar.scss'
 
 const Navbar = () => {
+  const { darkMode, setDarkMode } =useDarkModeContext();
+
+
   return (
    <div className="navbar">
     <div className="search">
@@ -22,8 +27,10 @@ const Navbar = () => {
         <LanguageOutlinedIcon />
         English
       </div>
-      <div className="item">
-        <DarkModeOutlinedIcon />
+      <div className="item" onClick={() =>setDarkMode((prev) => !prev)}>
+        {
+          darkMode ? <Brightness4Icon /> : <DarkModeOutlinedIcon />
+        }
       </div>
       <div className="item">
         <FullscreenExitOutlinedIcon />
@@ -36,7 +43,7 @@ const Navbar = () => {
         <ChatBubbleOutlineOutlinedIcon />
         <div className="counter">3</div>
       </div>
-      <div className="item">
+      <div className="item menu">
         <ListOutlinedIcon />
       </div>
       <div className="item">

@@ -59,9 +59,6 @@ button{
   html{
     font-size: 58.5%;
   }
-  .container{
-    width: $width-md-screen;
-  }
 }
 
 
@@ -69,8 +66,5 @@ button{
 @media screen and (max-width: 700px){
   html{
     font-size: 55.5%;
-  }
-  .container{
-    width: $width-sm-screen;
   }
 }

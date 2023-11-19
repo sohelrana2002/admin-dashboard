@@ -1,0 +1,56 @@
+.app.dark{
+    background: #222;
+    color: rgb(215, 215, 215);
+
+    .chart__grid{
+        stroke: rgba(228, 228, 228, 0.219);
+    }
+    .data_table{
+        background: #222;
+        color: rgb(215, 215, 215);
+
+        .dataGrid{
+            color: rgb(215, 215, 215);
+            border: 1px solid rgb(123, 123, 123);
+        }
+
+        .viewButton{
+            border: 1px solid rgb(123, 123, 123);
+            color: gray;
+        }
+        
+        .deleteButton{
+            border: 1px solid rgb(123, 123, 123);
+            color: gray;
+        }
+    }
+    .tableList{
+        background: #222;
+        color: rgb(215, 215, 215);
+        
+        .tableHead{
+            color: rgb(215, 215, 215);
+        }
+    }
+
+    .navbar{
+        color: #e7e7e7;
+        border-bottom: .05px solid rgb(123, 123, 123);
+
+        .search{
+            border: 1px solid rgb(123, 123, 123);
+        }
+    }
+
+    .sidebar{
+        border-right: .05px solid rgb(123, 123, 123);
+
+        hr{
+            border: .05px solid rgb(123, 123, 123);
+        }
+    }
+
+    input{
+        background: transparent;
+    }
+}

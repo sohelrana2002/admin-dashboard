@@ -33,7 +33,7 @@
             border-radius: 5px;
             color: gray;
 
-            .list__Title{
+            .list__Title {
                 font-weight: 500;
                 margin-bottom: 1.6rem;
                 font-size: 1.5rem;
@@ -41,4 +41,51 @@
             }
         }
     }
+}
+
+
+
+
+
+
+
+
+// ----------media query(mediam screen)------------
+@media screen and (max-width: 1024px) {
+    .home {
+
+        .home__container {
+
+
+            .widgets {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .charts {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    }
+
+}
+
+// ----------media query(small screen)------------
+@media screen and (max-width: 700px) {
+    .home {
+
+        .home__container {
+
+
+            .widgets {
+                grid-template-columns: 1fr;
+            }
+
+            .charts {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    }
+
 }

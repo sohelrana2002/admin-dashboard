@@ -22,6 +22,7 @@
             outline: none;
             color: rgb(143, 143, 143);
             border: none;
+            background: transparent;
 
             &::placeholder{
                 color: rgb(143, 143, 143);
@@ -29,13 +30,6 @@
         }
 
 }
-
-
-
-
-
-
-
 
 
     .items{
@@ -75,6 +69,10 @@
                 font-size: .8rem;
                 color: #fff;
                 font-weight: 600;
+            }
+
+            &.menu{
+                display: none;
             }
         }
     }

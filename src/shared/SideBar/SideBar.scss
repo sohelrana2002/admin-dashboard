@@ -91,3 +91,21 @@
         }
     }
 }
+
+
+
+
+
+
+
+
+
+// ----------media query(mediam screen)------------
+@media screen and (max-width: 1024px){
+    .sidebar{
+        // position: absolute;
+        // background: #222;
+        display: none;
+    }
+  }
+  
