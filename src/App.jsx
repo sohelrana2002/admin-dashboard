@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home, List, LogIn, New, Single } from "./config/Config";
+import { Home, List, LogIn, New, Single, SignUp } from "./config/Config";
 import { userInputs } from "./data/Data";
 import { productInputs } from "./data/Data";
 import { useDarkModeContext } from "./context/DarkModeContext";
@@ -15,6 +15,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/users" element={<List />} />
           <Route path="/log-in" element={<LogIn />} />
+          <Route path="/log-in" element={<LogIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
           <Route
             path="users/new"
             element={<New inputs={userInputs} title="Add New User" />}

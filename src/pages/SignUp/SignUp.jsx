@@ -2,15 +2,17 @@ import { useState } from "react";
 import { useFirebaseConext } from "../../context/FirebaseContext";
 import { useNavigate, NavLink } from "react-router-dom";
 import ErrerMessage from "../../helper/ErrorMessage/ErrorMessage";
-import "../SignUp/SignUp.css";
+import GoogleButton from "react-google-button";
+import "./SignUp.css";
 
-const LogIn = () => {
+const SignUp = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
+    cPassword: "",
     errer: "",
   });
-  const { logIn } = useFirebaseConext();
+  const { signUp, googleSignIn } = useFirebaseConext();
   const navigate = useNavigate();
 
   let name, value;
@@ -31,8 +33,21 @@ const LogIn = () => {
       errer: "",
     });
     try {
-        await logIn(user.email, user.password);
-        navigate("/");
+      if (user.password === user.cPassword) {
+        await signUp(user.email, user.password);
+        setUser({
+          email: "",
+          password: "",
+          cPassword: "",
+          errer: "success",
+        });
+        navigate("/log-in")
+      } else {
+        setUser({
+          ...user,
+          errer: "password not mached",
+        });
+      }
     } catch (err) {
       setUser({
         ...user,
@@ -40,6 +55,22 @@ const LogIn = () => {
       });
     }
   };
+
+
+
+  const handleGoogleSignIn = async(e) =>{
+    e.preventDefault();
+
+    try{
+      await googleSignIn();
+      navigate("/")
+    }catch(err){
+      setUser({
+        ...user,
+        errer: err.message,
+      });
+    }
+  }
 
   return (
     <div className="container signup__container">
@@ -60,9 +91,19 @@ const LogIn = () => {
           placeholder="Enter your password"
           required
         />
+        <input
+          type="password"
+          name="cPassword"
+          value={user.cPassword}
+          onChange={getUser}
+          placeholder="Enter your confirm password"
+          required
+        />
         {user.errer && <ErrerMessage message={user.errer} />}
+        <GoogleButton style={{ width: "100%" }}
+        onClick={handleGoogleSignIn} />
         <button type="submit" className="btn">
-          Log In
+          Sign Up
         </button>
 
         <p
@@ -72,15 +113,15 @@ const LogIn = () => {
           justifyContent: "flex-end",
           color: "rgba(0, 0, 0, 0.7)",
           fontSize: "16px"
-        }}>Don't have an account? <NavLink to="/sign-up"
+        }}>Already have an account? <NavLink to="/log-in"
         style={{
           textDecoration: "underline",
           color: "black",
           paddingLeft: "8px"
-        }}> Sign Up</NavLink></p>
+        }}> Log In</NavLink></p>
       </form>
     </div>
   );
 };
 
-export default LogIn;
+export default SignUp;

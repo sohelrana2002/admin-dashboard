@@ -2,13 +2,51 @@ import { useState } from 'react';
 import SideBar from '../../shared/SideBar/SideBar'
 import NavBar from '../../shared/NavBar/NavBar'
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { db } from '../../firebase/Firebase';
+import { useFirebaseConext } from '../../context/FirebaseContext';
 
 import './New.scss'
 
 
 const New = ({inputs, title}) => {
+  const { signUp, user } = useFirebaseConext();
   const [file, setFile] = useState("");
-  // console.log(file);
+  const [userData, setUserData] = useState({
+    // userName: "",
+    // surName: "",
+    // email: "",
+    // phone: "",
+    // password: "",
+    // address: "",
+    // country: ""
+  });
+  console.log(userData);
+  const handleInput = (e) =>{
+    e.preventDefault();
+    const id = e.target.id;
+    const value = e.target.value;
+
+    setUserData({
+      ...userData,
+      [id]: value
+    })
+  }
+
+  const handleSubmit = async(e) =>{
+    e.preventDefault();
+
+    try{
+      const res = await signUp(user.email, user.password);
+      await setDoc(doc(db, "user", res.user.uid), {
+        ...userData,
+        timeStamp: serverTimestamp(),
+      });
+      console.log("submit");
+    }catch(err){
+      console.log(err);
+    }
+  }
 
 
   return (
@@ -29,7 +67,7 @@ const New = ({inputs, title}) => {
             </div>
           </div>
           <div className="right">
-            <form action="#">
+            <form action="#" onSubmit={handleSubmit}>
             <div className="file__input">
                 <label htmlFor='file'><DriveFolderUploadIcon /></label>
                 <input type="file" id='file' onChange={e =>setFile(e.target.files[0])}/>
@@ -41,13 +79,19 @@ const New = ({inputs, title}) => {
                   return (
                     <div className="form__input" key={curElem.id}>
                       <label>{curElem.label}</label>
-                      <input type={curElem.type} placeholder={curElem.placeholder}  />
+                      <input 
+                       id={curElem.id}
+                       type={curElem.type} 
+                       placeholder={curElem.placeholder}
+                       onChange={handleInput}
+                      //  value={curElem.id}
+                      />
                     </div>
                   );
                 })
               }
 
-              <button type='button' className='btn'>Send</button>
+              <button type='submit' className='btn' >Send</button>
             </form>
           </div>
         </div>
